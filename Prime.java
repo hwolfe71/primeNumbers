@@ -258,7 +258,7 @@ class Prime {
 	  * @param num - the number to print the factors 
 	  */
 
-	public void printlnactors(long num) {
+	public void printFactors(long num) {
 		String factorList = new String();
 		if (num < 2) {
 			out.println(num + " is less than 2 and therefore has no prime factors!");
