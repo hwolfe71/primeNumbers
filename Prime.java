@@ -261,10 +261,10 @@ class Prime {
 	public void printFactors(long num) {
 		String factorList = new String();
 
-		while (num > getLastPrime()) {
-			addNextPrime();
+		while (num > this.getLastPrime()) {
+			this.addNextPrime();
 		}
-
+		
 		if (num < 2) {
 			out.println(num + " is less than 2 and therefore has no prime factors!");
 		} else if (this.indexOf(num) > -1) {
@@ -276,10 +276,12 @@ class Prime {
 						factorList = factorList + Long.toString(p) + " ";
 						while (num % p == 0) {
 							num /= p;
-						}
-					} 
-				} 
-			} 
+						} // end while
+					} // endif
+				} //end for
+			} //end while
+
+			out.println(factorList);
 		} 
 	} 
 
