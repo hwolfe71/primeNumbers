@@ -18,6 +18,7 @@ public class ListPrimes {
 	/**
 	  * Interactive method to display prime numbers to console.
 	  */
+
 	public static void main(String [] args) {
 		Scanner in = new Scanner(System.in);
 		Prime primes = new Prime();
@@ -30,7 +31,15 @@ public class ListPrimes {
 		} else {
 			tmp = args[0];
 		}
-		count = Integer.parseInt(tmp);
+
+		try {
+			count = Integer.parseInt(tmp);
+		} catch (NumberFormatException ex) {
+			// if invalid entry, exit
+			out.println("Invalid entry, goodbye!");
+			return;
+		}
+
 		if (count == 0) {
 			return;
 		}
