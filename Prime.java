@@ -260,6 +260,11 @@ class Prime {
 
 	public void printFactors(long num) {
 		String factorList = new String();
+
+		while (num > getLastPrime()) {
+			addNextPrime();
+		}
+
 		if (num < 2) {
 			out.println(num + " is less than 2 and therefore has no prime factors!");
 		} else if (this.indexOf(num) > -1) {
