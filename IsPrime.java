@@ -1,5 +1,5 @@
 /**
-  * ListPrimes.java
+  * IsPrime.java
   * @author Herb Wolfe, Jr <hwolfe71@gmail.com>
   *
   * Created: 01/03/2014
