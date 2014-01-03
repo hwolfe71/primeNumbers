@@ -7,7 +7,9 @@
   *
   * TODO: 
   *		Create gui?
-  *		Add command line parameter for how many primes to print
+  *		create various classes/programs to test the features.
+  *			PrimeList/ListPrimes #
+  *			IsPrime #
   */
 
 import static java.lang.System.*;
@@ -21,6 +23,7 @@ class Prime {
 	/**
 	  * Interactive method to display prime numbers to console.
 	  */
+
 	public static void main(String [] args) {
 		int count = 1;
 		boolean goAgain = true;
@@ -55,6 +58,7 @@ class Prime {
 	  * Calculate the next prime number, adding it to the List
 	  * Uses the sieve of Eratosthenes to find the next prime
 	  */
+
 	private void addNextPrime() {
 		long nextPrime = getLastPrime();
 
@@ -73,6 +77,7 @@ class Prime {
 	/**
 	  * Print the current List of primes to a file, primes.txt
 	  */
+
 	private void printAllPrimes() {
 		try {
 			PrintWriter pwout = new PrintWriter("primes.txt");
@@ -92,6 +97,7 @@ class Prime {
 	  * Print the first num primes to a file, primes.txt
 	  * @param num - how many primes to print
 	  */
+
 	private void printPrimes(int num) {
 		try {
 			PrintWriter pwout = new PrintWriter("primes.txt");
@@ -112,7 +118,14 @@ class Prime {
 	  * @param nth - the index of the prime number
 	  * @return - the prime number at the given index
 	  */
+
 	public long getPrime(int nth) {
+
+		// Grow the list, if necessary
+		while (nth > this.getNumPrimes()) {
+			addNextPrime();
+		}
+
 		return this.primes.get(nth - 1);
 	}
 
@@ -121,6 +134,7 @@ class Prime {
 	  * @param num - the number to search for
 	  * @return - the index of the number or -1 if it is not in the list
 	  */
+
 	private int indexOf(int num) {
 		return indexOf((long)num);
 	}
@@ -130,6 +144,7 @@ class Prime {
 	  * @param num - the number to search for
 	  * @return - the index of the number or -1 if it is not in the list
 	  */
+
 	private int indexOf(long num) {
 		return this.primes.indexOf(num);
 	}
@@ -138,15 +153,17 @@ class Prime {
 	  * Get the last prime number in the List
 	  * @return - the last prime number currently in the list
 	  */
+
 	public long getLastPrime() {
-		return getPrime(this.numPrimes());
+		return getPrime(this.getNumPrimes());
 	}
 
 	/**
 	  * How many primes are in the list
 	  * @return - the number of primes in the list
 	  */
-	public int numPrimes() {
+
+	public int getNumPrimes() {
 		return this.primes.size();
 	}
 
@@ -155,6 +172,7 @@ class Prime {
 	  * @param num - the number to be tested
 	  * @return whether or not the number is prime
 	  */
+
 	public boolean isPrime(long num) {
 		boolean numIsPrime = false;
 
@@ -174,6 +192,7 @@ class Prime {
 	  * @param num - the integer to test
 	  * @return whether or not the number is prime
 	  */
+
 	public boolean isPrime(int num) {
 		return isPrime((long)num);
 	}
@@ -183,6 +202,7 @@ class Prime {
 	  * @param num - the number to check
 	  * @return whether or not the number has any prime factors
 	  */
+
 	private boolean hasFactors(long num) {
 		boolean factors = false;
 
@@ -228,6 +248,7 @@ class Prime {
 	  * @param num - the integer to check
 	  * @return whether or not the number has any prime factors
 	  */
+
 	private boolean hasFactors(int num) {
 		return hasFactors((long)num);
 	}
@@ -236,6 +257,7 @@ class Prime {
 	  * Print the prime factors of a number
 	  * @param num - the number to print the factors 
 	  */
+
 	public void printlnactors(long num) {
 		String factorList = new String();
 		if (num < 2) {
