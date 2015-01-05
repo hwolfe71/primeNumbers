@@ -79,18 +79,7 @@ class Prime {
 	  */
 
 	private void printAllPrimes() {
-		try {
-			PrintWriter pwout = new PrintWriter("primes.txt");
-
-			for (Long p : this.primes) {
-				pwout.println(p);
-			}
-			pwout.close();
-		} catch (FileNotFoundException ex) {
-			out.println(ex.getMessage());
-			out.println("in " + System.getProperty("user.dir"));
-			System.exit(1);
-		}
+		printPrimes(primes.size())
 	}
 
 	/**
@@ -102,8 +91,12 @@ class Prime {
 		try {
 			PrintWriter pwout = new PrintWriter("primes.txt");
 
-			for (int i = 0; i <= num; i++) {
-				pwout.println(getPrime(i));
+			while (num < primes.size()) {
+				addNextPrime();
+			}
+
+			for (Long p : this.primes.subList(0, num) )
+				pwout.println(p);
 			}
 			pwout.close();
 		} catch (FileNotFoundException ex) {
