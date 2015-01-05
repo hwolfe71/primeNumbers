@@ -91,7 +91,7 @@ class Prime {
 		try {
 			PrintWriter pwout = new PrintWriter("primes.txt");
 
-			while (num < primes.size()) {
+			while (num > primes.size()) {
 				addNextPrime();
 			}
 
