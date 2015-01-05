@@ -79,7 +79,7 @@ class Prime {
 	  */
 
 	private void printAllPrimes() {
-		printPrimes(primes.size())
+		printPrimes(primes.size());
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Prime {
 				addNextPrime();
 			}
 
-			for (Long p : this.primes.subList(0, num) )
+			for (Long p : this.primes.subList(0, num) ) {
 				pwout.println(p);
 			}
 			pwout.close();
