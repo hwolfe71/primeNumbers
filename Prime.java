@@ -40,7 +40,9 @@ class Prime {
 			answer = in.next();
 			answer = answer.toUpperCase().substring(0,1);
 			goAgain = (answer.equals("Y"));
-			aPrimeList.addNextPrime();
+			if (goAgain) {
+				aPrimeList.addNextPrime();
+			}
 		} // end while goAgain
 
 		aPrimeList.printAllPrimesToFile();
