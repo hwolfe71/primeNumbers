@@ -38,22 +38,16 @@ public class IsPrime {
 
 		try {
 			num = Long.parseLong(tmp);
+			if (primes.isPrime(num)) {
+				out.println(num + " is a prime number.");
+			} else {
+				out.println(num + " is not a prime number.");
+			}
 		} catch (NumberFormatException ex) {
-			num = 0;
-		}
-
-		// if invalid entry, exit
-		if (num == 0) {
 			out.println("Invalid entry, goodbye!");
-			return;
 		}
 
-		if (primes.isPrime(num)) {
-			out.println(num + " is a prime number.");
-		} else {
-			out.println(num + " is not a prime number.");
-		}
-
+		return;
 	} // end main
 
 } // end class ListPrimes
