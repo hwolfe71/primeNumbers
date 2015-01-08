@@ -43,7 +43,7 @@ class Prime {
 			aPrimeList.addNextPrime();
 		} // end while goAgain
 
-		aPrimeList.printAllPrimes();
+		aPrimeList.printAllPrimesToFile();
 
 		return;
 	} 
@@ -75,11 +75,34 @@ class Prime {
 	}
 
 	/**
+	  * Print the current List of primes to stdout
+	  */
+
+	public void printAllPrimes() {
+		printPrimes(primes.size());
+	}
+
+	/**
+	  * Print the first num primes to stdout
+	  * @param num - how many primes to print
+	  */
+
+	public void printPrimes(int num) {
+		while (num > primes.size()) {
+			addNextPrime();
+		}
+
+		for (Long p : this.primes.subList(0, num) ) {
+			System.out.println(p);
+		}
+	}
+
+	/**
 	  * Print the current List of primes to a file, primes.txt
 	  */
 
-	private void printAllPrimes() {
-		printPrimes(primes.size());
+	private void printAllPrimesToFile() {
+		printPrimesToFile(primes.size());
 	}
 
 	/**
@@ -87,7 +110,7 @@ class Prime {
 	  * @param num - how many primes to print
 	  */
 
-	private void printPrimes(int num) {
+	private void printPrimesToFile(int num) {
 		try {
 			PrintWriter pwout = new PrintWriter("primes.txt");
 
