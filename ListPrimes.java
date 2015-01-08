@@ -35,7 +35,7 @@ public class ListPrimes {
 		try {
 			count = Integer.parseInt(tmp);
 			primes = new Prime(count);
-			primes.printPrimes(count)
+			primes.printAllPrimes();
 		} catch (NumberFormatException ex) {
 			// if invalid entry, exit
 			out.println("Invalid entry, goodbye!");
