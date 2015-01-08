@@ -220,7 +220,8 @@ class Prime {
 	}
 
 	/**
-	  * Determine whether the number has any (prime) factors
+	  * Determine whether the number has any (prime) factors - used
+	  * internally to grow list of primes.
 	  * @param num - the number to check
 	  * @return whether or not the number has any prime factors
 	  */
@@ -230,7 +231,6 @@ class Prime {
 
 		// The largest factor of a number is it's square root.
 		int max = (int)Math.ceil(Math.sqrt(num));
-		this.growToValue(max);
 
 		for (Long p : this.primes) {
 			factors = (num % p == 0); 
@@ -240,16 +240,6 @@ class Prime {
 		} 
 		return factors;
 	} 
-
-	/**
-	  * Determine whether the int has any prime factors
-	  * @param num - the integer to check
-	  * @return whether or not the number has any prime factors
-	  */
-
-	private boolean hasFactors(int num) {
-		return hasFactors((long)num);
-	}
 
 	/**
 	  * Print the prime factors of a number
