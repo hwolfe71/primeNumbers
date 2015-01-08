@@ -34,20 +34,15 @@ public class ListPrimes {
 
 		try {
 			count = Integer.parseInt(tmp);
+			for (int i = 1; i <= count; i++) {
+				out.println(primes.getPrime(i));
+			}
 		} catch (NumberFormatException ex) {
 			// if invalid entry, exit
 			out.println("Invalid entry, goodbye!");
-			return;
 		}
 
-		if (count == 0) {
-			return;
-		}
-
-		for (int i = 1; i <= count; i++) {
-			out.println(primes.getPrime(i));
-		}
-
+		return;
 	} // end main
 
 } // end class ListPrimes
