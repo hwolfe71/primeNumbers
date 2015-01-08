@@ -38,14 +38,12 @@ public class factors {
 
 		try {
 			num = Long.parseLong(tmp);
+			primes.printFactors(num);
 		} catch (NumberFormatException ex) {
-			// if invalid entry, exit
 			out.println("Invalid entry, goodbye!");
-			return;
 		}
 
-		primes.printFactors(num);
-
+		return;
 	} // end main
 
 } // end class ListPrimes
