@@ -50,11 +50,25 @@ class Prime {
 		return;
 	} 
 
-	public Prime() {
-		this.primes = new ArrayList<Long>();
+	/**
+	  * Default constructor - Creates a new list of 1 prime.
+	  */
 
-		this.primes.add(firstPrime);
+	public Prime() {
+		this(1);
 	}
+
+	/**
+	  * Constructs a list of primes of the specified size.
+	  * @param size - the number of primes in the list.
+	  */
+
+	public Prime(int size) {
+		this.primes = new ArrayList<Long>();
+		this.primes.add(firstPrime);
+		this.growToSize(size);
+	}
+
 
 	/**
 	  * Calculate the next prime number, adding it to the List
