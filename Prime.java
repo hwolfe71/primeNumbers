@@ -75,6 +75,28 @@ class Prime {
 	}
 
 	/**
+	  * Grow the list to at least size primes
+	  * @param size - the minimum number of primes.
+	  */
+
+	public void growToSize(int size) {
+		while (size > primes.size()) {
+			addNextPrime();
+		}
+	}
+
+	/**
+	  * Grow the list until the last number is larger than value.
+	  * @param value - the minimum number of primes.
+	  */
+
+	public void growToValue(long value) {
+		while (value > this.getLastPrime()) {
+			addNextPrime();
+		}
+	}
+
+	/**
 	  * Print the current List of primes to stdout
 	  */
 
@@ -88,9 +110,7 @@ class Prime {
 	  */
 
 	public void printPrimes(int num) {
-		while (num > primes.size()) {
-			addNextPrime();
-		}
+		this.growToSize(num);
 
 		for (Long p : this.primes.subList(0, num) ) {
 			System.out.println(p);
@@ -114,9 +134,7 @@ class Prime {
 		try {
 			PrintWriter pwout = new PrintWriter("primes.txt");
 
-			while (num > primes.size()) {
-				addNextPrime();
-			}
+			this.growToSize(num);
 
 			for (Long p : this.primes.subList(0, num) ) {
 				pwout.println(p);
@@ -136,12 +154,7 @@ class Prime {
 	  */
 
 	public long getPrime(int nth) {
-
-		// Grow the list, if necessary
-		while (nth > this.getNumPrimes()) {
-			addNextPrime();
-		}
-
+		this.growToSize(nth);
 		return this.primes.get(nth - 1);
 	}
 
@@ -192,10 +205,7 @@ class Prime {
 	public boolean isPrime(long num) {
 		boolean numIsPrime = false;
 
-		// Grow the list, if necessary
-		while (num > getLastPrime()) {
-			addNextPrime();
-		}
+		this.growToValue(num);
 
 		if ((num > 1) && (this.indexOf(num) > -1))
 			numIsPrime = true;
@@ -277,9 +287,7 @@ class Prime {
 	public void printFactors(long num) {
 		String factorList = new String();
 
-		while (num > this.getLastPrime()) {
-			this.addNextPrime();
-		}
+		this.growToValue(num);
 		
 		if (num < 2) {
 			out.println(num + " is less than 2 and therefore has no prime factors!");
