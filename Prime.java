@@ -205,14 +205,8 @@ class Prime {
 	  */
 
 	public boolean isPrime(long num) {
-		boolean numIsPrime = false;
-
 		this.growToValue(num);
-
-		if ((num > 1) && (this.indexOf(num) > -1))
-			numIsPrime = true;
-
-		return numIsPrime;
+		return ((num > 1) && (this.indexOf(num) > -1));
 	}
 
 	/**
@@ -232,16 +226,14 @@ class Prime {
 	  */
 
 	private boolean hasFactors(long num) {
-		boolean factors = false;
+		boolean factors;
 
 		// The largest factor of a number is it's square root.
 		int max = (int)Math.ceil(Math.sqrt(num));
 		this.growToValue(max);
 
 		for (Long p : this.primes) {
-			if (num % p == 0) {
-				factors = true;
-			}
+			factors = (num % p == 0); 
 			if (factors || p > max) {
 				break;
 			}
