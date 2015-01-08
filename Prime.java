@@ -232,42 +232,20 @@ class Prime {
 	private boolean hasFactors(long num) {
 		boolean factors = false;
 
-		for (Long p: this.primes) {
+		// The largest factor of a number is it's square root.
+		int max = (int)Math.ceil(Math.sqrt(num));
+		this.growToValue(max);
+
+		for (Long p : this.primes) {
 			if (num % p == 0) {
 				factors = true;
 			}
-			if (factors || (p > (int)Math.ceil(Math.sqrt(num))))
+			if (factors || p > max) {
 				break;
+			}
 		} 
-
-		{
-		/* Alternatively:
-		int i = 1;
-		long p = getPrime(i);
-		while (!factor && (i <= size))
-			factor = (num % p = 0);
-			if !factor {
-				i++;
-				p = getPrime(i);
-			}
-		*/
-		}
-
-		{
-		/* Alt 2: will execute fewer times per check
-		int i = 1;
-		long p = getPrime(i);
-		while (!factor && (num >= p*p)) {
-			factor = (num % p = 0);
-			if !factor {
-				i++;
-				p = getPrime(i);
-			}
-		*/
-		}
 		return factors;
-
-	} // end hasFactors
+	} 
 
 	/**
 	  * Determine whether the int has any prime factors
