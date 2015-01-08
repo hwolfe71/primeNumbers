@@ -21,7 +21,7 @@ public class ListPrimes {
 
 	public static void main(String [] args) {
 		Scanner in = new Scanner(System.in);
-		Prime primes = new Prime();
+		Prime primes;
 		int count;
 		String tmp;
 
@@ -34,7 +34,8 @@ public class ListPrimes {
 
 		try {
 			count = Integer.parseInt(tmp);
-			prime.printPrimes(count)
+			primes = new Prime(count);
+			primes.printPrimes(count)
 		} catch (NumberFormatException ex) {
 			// if invalid entry, exit
 			out.println("Invalid entry, goodbye!");
