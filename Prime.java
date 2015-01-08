@@ -227,7 +227,7 @@ class Prime {
 	  */
 
 	private boolean hasFactors(long num) {
-		boolean factors;
+		boolean factors = false;
 
 		// The largest factor of a number is it's square root.
 		int max = (int)Math.ceil(Math.sqrt(num));
