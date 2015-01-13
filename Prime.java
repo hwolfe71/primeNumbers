@@ -69,7 +69,6 @@ class Prime {
 		this.growToSize(size);
 	}
 
-
 	/**
 	  * Calculate the next prime number, adding it to the List
 	  * Uses the sieve of Eratosthenes to find the next prime
@@ -131,6 +130,9 @@ class Prime {
 		for (Long p : this.primes.subList(0, num) ) {
 			System.out.println(p);
 		}
+		/* Lambda method:
+		 * primes.sublist(0,num).forEach(System.out::println);
+		 */
 	}
 
 	/**
@@ -155,6 +157,9 @@ class Prime {
 			for (Long p : this.primes.subList(0, num) ) {
 				pwout.println(p);
 			}
+			/* Lambda method:
+			 * primes.sublist(0,num).forEach(System.out::println);
+			 */
 			pwout.close();
 		} catch (FileNotFoundException ex) {
 			out.println(ex.getMessage());
