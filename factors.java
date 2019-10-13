@@ -10,12 +10,9 @@
   *
   */
 
-//package hwolfe.prime;
-
 import static java.lang.System.*;
 import java.util.*;
 import java.io.*;
-//import prime.*;
 
 public class factors {
 
@@ -44,6 +41,6 @@ public class factors {
 		}
 
 		return;
-	} // end main
+	} 
 
-} // end class ListPrimes
+} 

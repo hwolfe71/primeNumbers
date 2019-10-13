@@ -6,12 +6,9 @@
   *
   */
 
-//package hwolfe.prime;
-
 import static java.lang.System.*;
 import java.util.*;
 import java.io.*;
-//import prime.*;
 
 public class ListPrimes {
 
@@ -37,11 +34,10 @@ public class ListPrimes {
 			primes = new Prime(count);
 			primes.printAllPrimes();
 		} catch (NumberFormatException ex) {
-			// if invalid entry, exit
 			out.println("Invalid entry, goodbye!");
 		}
 
 		return;
-	} // end main
+	}
 
-} // end class ListPrimes
+} 

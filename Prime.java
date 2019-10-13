@@ -5,11 +5,6 @@
   * This program displays a list of prime numbers
   * and provides other functions for determining working with primes.
   *
-  * TODO: 
-  *		Create gui?
-  *		create various classes/programs to test the features.
-  *			PrimeList/ListPrimes #
-  *			IsPrime #
   */
 
 import static java.lang.System.*;
@@ -43,7 +38,7 @@ class Prime {
 			if (goAgain) {
 				aPrimeList.addNextPrime();
 			}
-		} // end while goAgain
+		} 
 
 		aPrimeList.printAllPrimesToFile();
 
@@ -130,9 +125,6 @@ class Prime {
 		for (Long p : this.primes.subList(0, num) ) {
 			System.out.println(p);
 		}
-		/* Lambda method:
-		 * primes.sublist(0,num).forEach(System.out::println);
-		 */
 	}
 
 	/**
@@ -157,9 +149,6 @@ class Prime {
 			for (Long p : this.primes.subList(0, num) ) {
 				pwout.println(p);
 			}
-			/* Lambda method:
-			 * primes.sublist(0,num).forEach(System.out::println);
-			 */
 			pwout.close();
 		} catch (FileNotFoundException ex) {
 			out.println(ex.getMessage());
@@ -281,13 +270,13 @@ class Prime {
 						factorList = factorList + Long.toString(p) + " ";
 						while (num % p == 0) {
 							num /= p;
-						} // end while
-					} // endif
-				} //end for
-			} //end while
+						}
+					} 
+				} 
+			} 
 
 			out.println(factorList);
 		} 
 	} 
 
-} // end Prime
+}
