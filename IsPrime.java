@@ -10,12 +10,9 @@
   *
   */
 
-//package hwolfe.prime;
-
 import static java.lang.System.*;
 import java.util.*;
 import java.io.*;
-//import prime.*;
 
 public class IsPrime {
 
@@ -48,6 +45,6 @@ public class IsPrime {
 		}
 
 		return;
-	} // end main
+	}
 
-} // end class ListPrimes
+}
